@@ -1,0 +1,72 @@
+/*Inventory & Warehouse System
+Scenario:
+Product class stores private data: name, quantity, price.
+Warehouse class manages stock updates and total value calculation
+Warehouse needs access to Product’s private members to update quantity or calculate inventory value.*/
+#include<iostream>
+using namespace std;
+class Warehouse;
+class Product
+{
+    private:
+    string pName;
+    int qty;
+    float price;
+    public:
+    void getData()
+    {
+        cout<<"Enter a product name:"<<endl;
+        cin>>pName;
+        cout<<"Enter quntity of"<<pName<<endl;
+        cin>>qty;
+        cout<<"Enter a price of "<<pName<<endl;
+        cin>>price;
+    }
+    friend class Warehouse;
+};
+class Warehouse
+{
+    public:
+    void updateQ(Product p)
+    {
+        cout<<" updating product quntity...:"<<endl;
+        cout<<"update the Quntity of product:"<<p.pName<<endl;
+        cin>>p.qty;
+        cout<<"Quntity updated succusefully !"<<endl;
+        cout<<"Total quntity of "<<p.pName<<"is:"<<p.qty<<endl;
+    }
+    void updateP(Product p1)
+    {
+        cout<<"Updating price of the product:"<<p1.pName<<endl;
+        cin>>p1.price;
+        cout<<"Price updated succusefully !"<<endl;
+        cout<<"new price of:"<<p1.pName<<"is"<<p1.price<<endl;
+    }
+};
+int main()
+{
+    string takeOpenion1 ;
+    Product p;
+    p.getData();
+    Warehouse w;
+    cout<<"Can you update ,then simpaly type : Quentity , Price or no"<<endl;
+    cin>>takeOpenion1;
+    if(takeOpenion1=="Quentity" || takeOpenion1=="quentity" ||takeOpenion1=="QUENTITY")
+    {
+        w.updateQ(p);
+    }
+    else if(takeOpenion1=="price"|| takeOpenion1=="PRICE" ||takeOpenion1=="Price")
+    {
+        w.updateP(p);
+    }
+    else if(takeOpenion1=="No"|| takeOpenion1=="no"||takeOpenion1=="NO")
+    {
+        return 0;
+    }
+    else
+    {
+        cout<<"hey admin please Enter a correct spelling:"<<endl;
+    }
+    
+    return 0;
+}
