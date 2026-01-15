@@ -17,7 +17,7 @@ class Product
     {
         cout<<"Enter a product name:"<<endl;
         cin>>pName;
-        cout<<"Enter quntity of"<<pName<<endl;
+        cout<<"Enter quntity of "<<pName<<endl;
         cin>>qty;
         cout<<"Enter a price of "<<pName<<endl;
         cin>>price;
@@ -40,7 +40,7 @@ class Warehouse
         cout<<"Updating price of the product:"<<p1.pName<<endl;
         cin>>p1.price;
         cout<<"Price updated succusefully !"<<endl;
-        cout<<"new price of:"<<p1.pName<<"is  "<<p1.price<<endl;
+        cout<<"new price of:"<<p1.pName<<" is "<<p1.price<<endl;
     }
 };
 int main()
@@ -71,3 +71,4 @@ int main()
     return 0;
 
 }
+
