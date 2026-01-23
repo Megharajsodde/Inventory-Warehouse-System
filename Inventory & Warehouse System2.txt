@@ -1,8 +1,4 @@
-/*Inventory & Warehouse System
-Scenario:
-Product class stores private data: name, quantity, price.
-Warehouse class manages stock updates and total value calculation
-Warehouse needs access to Product’s private members to update quantity or calculate inventory value.*/
+
 #include<iostream>
 using namespace std;
 class Warehouse;
@@ -71,4 +67,5 @@ int main()
     return 0;
 
 }
+
 
